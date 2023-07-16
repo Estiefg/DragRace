@@ -1,64 +1,58 @@
-// Step 1: Setting up the game
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drag Race Game</title>
+  <style>
+    /* Logo styling */
+    .logo {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 900;
+      font-size: 48px;
+      text-transform: uppercase;
+      background-image: linear-gradient(to right, #FF69B4, #FF00FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
 
-// Initialize the game canvas
-const canvas = document.getElementById('game-canvas');
-const context = canvas.getContext('2d');
+    /* Start button styling */
+    .start-button {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      background-color: #FF69B4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
 
-// Set the canvas dimensions
-canvas.width = 800;
-canvas.height = 600;
+    /* Animation keyframes */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
 
-// Create variables to store drag queen character information
-let dragQueenName = '';
-let dragQueenAppearance = '';
-
-// Function to handle drag queen creation
-function createDragQueen() {
-  // Prompt the player for their drag queen's name and appearance
-  dragQueenName = prompt("Enter your drag queen's name:");
-  dragQueenAppearance = prompt("Enter your drag queen's appearance:");
-
-  // Perform validation or additional customization if needed
-
-  // Start the game or proceed to the next step
-  startRace();
-}
-
-// Function to start the race
-function startRace() {
-  // Perform any necessary setup before the race begins
-
-  // Display the race screen or transition to the race scene
-  showRaceScreen();
-}
-
-// Function to display the race screen
-function showRaceScreen() {
-  // Clear the canvas
-  context.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Draw the race track and other game elements
-  // (This code is just a placeholder and needs to be replaced with appropriate graphics)
-  context.fillStyle = 'gray';
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  context.fillStyle = 'white';
-  context.font = '24px Arial';
-  context.fillText(`Welcome to the Drag Race, ${dragQueenName}!`, 200, 200);
-  context.fillText(`Get ready to show off your drag queen skills!`, 200, 250);
-  // Draw additional UI elements and instructions
-
-  // Add event listeners or buttons to start the race
-}
-
-// Function to handle user interactions or button clicks
-function handleUserInteraction() {
-  // Implement logic to handle user interactions or button clicks
-  // For example, start the drag queen creation process when the game starts
-  createDragQueen();
-}
-
-// Event listener for when the page finishes loading
-window.addEventListener('load', () => {
-  // Call the function to handle user interactions
-  handleUserInteraction();
-});
+    /* Main page background */
+    body {
+      background-image: url('https://i.ibb.co/bRz3XC7/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="logo">Drag Race Game</h1>
+  <button class="start-button">Start Game</button>
+</body>
+</html>
